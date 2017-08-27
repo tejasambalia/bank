@@ -13,16 +13,22 @@
 
 <?php include '_Layout.php'; 
     include_once "db.php";
-
- $selectSQL = 'SELECT * FROM `details`';
+if(isset($_POST['EMPNUMBER'])){
+  $selectSQL = "SELECT * FROM `details` WHERE EMPNUMBER=".$_POST['EMPNUMBER'];
+}
+else{
+  $selectSQL = 'SELECT * FROM `details`';
+}
  # Execute the SELECT Query
   if( !( $selectRes = mysqli_query( $con,$selectSQL ) ) ){
     echo 'Retrieval of data from Database Failed - #'.mysql_errno().': '.mysql_error();
   }else{
     
  ?>
-
-  
+<form method="post">
+  <input type="text" name="EMPNUMBER" placeholder="Search Employee Number">
+  <input type="submit" value="Search"> 
+</form>
 <table class="table table-striped">
     <thead>
       <tr>

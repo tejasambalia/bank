@@ -1,21 +1,18 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
 include_once "header.php";
 include_once "db.php";
-include '_Layout.php';
 
 if(isset($_GET['id'])){
 	$id = $_GET['id'];
 	$data = array();
 	$query = "SELECT * FROM `details` WHERE id='".$id."'";
 	$select_res = mysqli_query($con, $query);
-
 	while($row=mysqli_fetch_array($select_res, MYSQLI_ASSOC)){
 		$data[] = $row; 
 	}
-
+	//print_r($data);die();
 	echo "<table>";
 	echo "<tr>";
 	echo "<td style=\"vertical-align:top\">";
@@ -26,8 +23,7 @@ if(isset($_GET['id'])){
 	echo "<th colspan=2>Employee Detail</th>";
 	echo "</tr>";
 	echo "</thead>";
-	//while ($row = mysqli_fetch_assoc( $select_res )){
-	$row = mysqli_fetch_assoc( $select_res )
+	while ($data){
 		echo "<tr>";
 		echo "	<td>Employee No</td>";
 		echo "	<td>".$row['EMPNUMBER']."</td>";
@@ -60,15 +56,13 @@ if(isset($_GET['id'])){
 		echo "	<td>GENDER</td>";
 		echo "	<td>".$row['EMP_GENDER']."</td>";
 		echo "</tr>";
-	//}
+	}
 
 	echo "</table>";
 	echo "</td>";
 
 	echo "<td style=\"vertical-align:top\">";
 	//second table
-
-
 	echo "<table class=\"table table-bordered\">";
 
 	echo "<thead>";

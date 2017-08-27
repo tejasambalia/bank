@@ -7,7 +7,7 @@
     <ul class="nav navbar-nav">
       <li><a href="importData.php">Import Data</a></li>
       <li><a href="employeeList.php">Employee List</a></li>
-      <li><a href="printForm.php">Print form</a></li>
+      <li><a href="#">Print form</a></li>
       
     </ul>
   </div>
