@@ -11,7 +11,7 @@
   <h2>Dashboard</h2>
   
   
-<?php include '_Layout.php'?>
+<?php include '_Layout.php' ?>
 </div>
 </body>
 </html>

@@ -135,10 +135,10 @@ $id = $_GET['id'];
 			<h4>Housing Loan</h4>
 		</div>
 		<div class='col-md-2'>
-			<input type='text' class='form-control' placeholder='Other Housing Loan' name='otherLoan'>
+			<input type='text' class='form-control' placeholder='Other Housing Loan' name='otherLoan' value='".$row['HSG_LN3']."'>
 		</div>
-		<div class='col-md-3'>
-			<h4> " .($row['HSG_LN1'] + $row['HSG_LN2'] + $row['HSG_LN3']) ."</h4>
+		<div class='col-md-8'>
+			<h4> LN 1 : ".$row['HSG_LN1']." RS | LN 2 : ".$row['HSG_LN2']." RS | LN 3 : ".$row['HSG_LN3']." RS | Total : " .($row['HSG_LN1'] + $row['HSG_LN2'] + $row['HSG_LN3']) ."</h4>
 		</div>
 		</div>
 
@@ -146,8 +146,11 @@ $id = $_GET['id'];
 		<div class='col-md-2'>
 			<h4>Perquisites (PQ)</h4>
 		</div>
+		<div class='col-md-2'>
+			<input type='text' class='form-control' placeholder='PERQUISITES' name='PERQUISITES' value='".$row['PERQUISITES']."'>
+		</div>
 		<div class='col-md-3'>
-			<h4> " .$row['TRANSFER'] ."</h4>
+			<h4>PERQUISITES : ".$row['PERQUISITES']."</h4>
 		</div>
 		</div>
 
@@ -156,10 +159,10 @@ $id = $_GET['id'];
 			<h4>LIC</h4>
 		</div>
 		<div class='col-md-2'>
-			<input type='text' class='form-control' placeholder='Other LIC' name='otherLic'>
+			<input type='text' class='form-control' placeholder='Other LIC' name='otherLic' value='".$row['LIC_CUSTOM']."'>
 		</div>
-		<div class='col-md-3'>
-			<h4> " .$row['LIC']  ."</h4>
+		<div class='col-md-8'>
+			<h4> LIC : ".$row['LIC']." | LIC CUSTOM : ".$row['LIC_CUSTOM']." | Total : " .($row['LIC']+$row['LIC_CUSTOM'])  ."</h4>
 		</div>
 		</div>
 
